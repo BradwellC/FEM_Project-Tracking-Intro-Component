@@ -1,3 +1,304 @@
+@font-face {
+  font-family: "Barlow";
+  font-weight: 400;
+  src: url("/public/fonts/Barlow-Regular.woff2") format("woff2"), url("/public/fonts/Barlow-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  font-weight: 400;
+  src: url("/public/fonts/BarlowCondensed-Regular.woff2") format("woff2"), url("/public/fonts/BarlowCondensed-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  font-weight: 700;
+  src: url("/public/fonts/BarlowCondensed-Bold.woff2") format("woff2"), url("/public/fonts/BarlowCondensed-Bold.woff2") format("woff");
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+li {
+  list-style: none;
+}
+
+.heading-l {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  font-family: "Barlow Condensed";
+  text-transform: uppercase;
+}
+
+body {
+  background-color: #fff;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 184px;
+  height: 48px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #ff5e5e;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Barlow Condensed";
+  letter-spacing: 1.07px;
+  transition: all 0.5s;
+}
+
+.btn-primary:hover {
+  background-color: rgba(255, 92, 92, 0.2473);
+}
+
+@media (max-width: 40em) {
+  .btn {
+    width: 153px;
+    height: 40px;
+  }
+}
+.primary-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1110px;
+  margin-inline: auto;
+  padding-block: 3rem 4rem;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 379px;
+}
+
+.navbar-toggle {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Barlow Condensed";
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #242942;
+  transition: all 0.4s;
+}
+
+.nav-circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: rgba(36, 41, 66, 0.15);
+}
+
+.nav-login {
+  color: rgba(36, 41, 66, 0.5);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Barlow Condensed";
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.nav-link:hover,
+.nav-login:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 35em) {
+  .primary-header {
+    width: 311px;
+    margin-inline: auto;
+    z-index: 100;
+  }
+  nav {
+    display: none;
+    position: fixed;
+    inset: 7rem 1.5rem auto;
+    height: 233px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+    z-index: 20;
+    border-radius: 3px;
+  }
+  nav[data-visible] {
+    display: block;
+    position: fixed;
+  }
+  nav ul {
+    display: grid;
+    gap: 15px;
+    width: 263px;
+    margin-inline: auto;
+    padding-left: 0;
+    height: 210px;
+    text-align: center;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .nav-circle {
+    height: 1px;
+    width: 263px;
+    margin-inline: auto;
+  }
+}
+.main-section {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 482px;
+  position: relative;
+}
+
+.main-section_img::after {
+  content: "";
+  width: 319px;
+  height: 425px;
+  background-color: #edf2f6;
+  position: absolute;
+  top: -27%;
+  right: -2%;
+  z-index: -10;
+  border-bottom-left-radius: 60px;
+}
+
+.main-section_img img {
+  height: 239px;
+}
+
+.main-section_content {
+  margin-top: 5rem;
+  width: 311px;
+  margin-inline: 1.5rem;
+  align-items: center;
+}
+
+.main-title {
+  font-size: 15px;
+  font-family: "Barlow Condensed";
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(36, 41, 66, 0.5);
+  padding-block-end: 1rem;
+}
+
+.main-title span {
+  background-color: #242942;
+  color: #eef3f6;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-right: 0.5rem;
+  padding: 4px 13px;
+  border-radius: 15px;
+}
+
+.main-content {
+  font-size: 18px;
+  font-family: "Barlow";
+  font-weight: 400;
+  line-height: 26px;
+  color: rgba(36, 41, 66, 0.75);
+  padding-block: 1.3rem 2.5rem;
+}
+
+.btn-section {
+  display: flex;
+  align-items: center;
+}
+
+.btn-section p {
+  font-size: 14px;
+  font-family: "Barlow Condensed";
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  margin-left: 0.6rem;
+  width: 124px;
+  text-transform: uppercase;
+}
 
 /*# sourceMappingURL=style.css.map */
